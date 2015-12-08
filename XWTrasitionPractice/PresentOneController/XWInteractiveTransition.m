@@ -48,37 +48,21 @@
     switch (_direction) {
         case XWInteractiveTransitionGestureDirectionLeft:{
             CGFloat transitionX = -[panGesture translationInView:panGesture.view].x;
-            if (transitionX < 0) {
-                [self cancelInteractiveTransition];
-                return;
-            }
             persent = transitionX / panGesture.view.frame.size.width;
         }
             break;
         case XWInteractiveTransitionGestureDirectionRight:{
             CGFloat transitionX = [panGesture translationInView:panGesture.view].x;
-            if (transitionX < 0) {
-                [self cancelInteractiveTransition];
-                return;
-            }
             persent = transitionX / panGesture.view.frame.size.width;
         }
             break;
         case XWInteractiveTransitionGestureDirectionUp:{
             CGFloat transitionY = -[panGesture translationInView:panGesture.view].y;
-            if (transitionY < 0) {
-                [self cancelInteractiveTransition];
-                return;
-            }
             persent = transitionY / panGesture.view.frame.size.width;
         }
             break;
         case XWInteractiveTransitionGestureDirectionDown:{
             CGFloat transitionY = [panGesture translationInView:panGesture.view].y;
-            if (transitionY < 0) {
-                [self cancelInteractiveTransition];
-                return;
-            }
             persent = transitionY / panGesture.view.frame.size.width;
         }
             break;
