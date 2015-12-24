@@ -101,7 +101,7 @@
         case XWCircleSpreadTransitionTypePresent:{
             id<UIViewControllerContextTransitioning> transitionContext = [anim valueForKey:@"transitionContext"];
             [transitionContext completeTransition:YES];
-            [transitionContext viewControllerForKey:UITransitionContextToViewKey].view.layer.mask = nil;
+//            [transitionContext viewControllerForKey:UITransitionContextToViewKey].view.layer.mask = nil;
         }
             break;
         case XWCircleSpreadTransitionTypeDismiss:{

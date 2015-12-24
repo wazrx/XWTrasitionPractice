@@ -40,6 +40,14 @@
     };
     //此处传入self.navigationController， 不传入self，因为self.view要形变，否则手势百分比算不准确；
     [_interactiveTransitionPush addPanGestureForViewController:self];
+    UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backToRoot)];
+    self.navigationItem.leftBarButtonItem = back;
+}
+
+- (void)backToRoot
+{
+    self.navigationController.delegate = nil;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)push{
