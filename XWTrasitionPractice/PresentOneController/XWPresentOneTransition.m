@@ -93,7 +93,9 @@
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     UIViewController *toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     //参照present动画的逻辑，present成功后，containerView的最后一个子视图就是截图视图，我们将其取出准备动画
-    UIView *tempView = [transitionContext containerView].subviews[0];
+    UIView *containerView = [transitionContext containerView];
+    NSArray *subviewsArray = containerView.subviews;
+    UIView *tempView = subviewsArray[MIN(subviewsArray.count, MAX(0, subviewsArray.count - 2))];
     //动画吧
     [UIView animateWithDuration:[self transitionDuration:transitionContext] animations:^{
         //因为present的时候都是使用的transform，这里的动画只需要将transform恢复就可以了

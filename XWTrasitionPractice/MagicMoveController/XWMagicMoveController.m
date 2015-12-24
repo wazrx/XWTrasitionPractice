@@ -32,6 +32,14 @@ static NSString * const reuseIdentifier = @"Cell";
     self.title = @"神奇移动";
     self.collectionView.backgroundColor = [UIColor whiteColor];
     [self.collectionView registerNib:[UINib nibWithNibName:@"XWMagicMoveCell" bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+    UIBarButtonItem *back = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(backToRoot)];
+    self.navigationItem.leftBarButtonItem = back;
+}
+
+- (void)backToRoot
+{
+    self.navigationController.delegate = nil;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark <UICollectionViewDataSource>
